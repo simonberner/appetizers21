@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15B7A9EE274FDFB400870B3F /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B7A9ED274FDFB400870B3F /* Appetizer.swift */; };
 		15DE9EB2274EB29F009DC7B4 /* Appetizers21App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DE9EB1274EB29F009DC7B4 /* Appetizers21App.swift */; };
 		15DE9EB4274EB29F009DC7B4 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DE9EB3274EB29F009DC7B4 /* AppetizerTabView.swift */; };
 		15DE9EB6274EB2A1009DC7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15DE9EB5274EB2A1009DC7B4 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15B7A9ED274FDFB400870B3F /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
 		15DE9EAE274EB29F009DC7B4 /* Appetizers21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizers21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DE9EB1274EB29F009DC7B4 /* Appetizers21App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizers21App.swift; sourceTree = "<group>"; };
 		15DE9EB3274EB29F009DC7B4 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				15DE9EDB274ED3CD009DC7B4 /* AppetizerListView.swift */,
 				15DE9EDD274ED3E8009DC7B4 /* AccountView.swift */,
 				15DE9EDF274ED3F9009DC7B4 /* OrderView.swift */,
+				15B7A9ED274FDFB400870B3F /* Appetizer.swift */,
 			);
 			path = Appetizers21;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B7A9EE274FDFB400870B3F /* Appetizer.swift in Sources */,
 				15DE9EDE274ED3E8009DC7B4 /* AccountView.swift in Sources */,
 				15DE9EB4274EB29F009DC7B4 /* AppetizerTabView.swift in Sources */,
 				15DE9EB2274EB29F009DC7B4 /* Appetizers21App.swift in Sources */,
