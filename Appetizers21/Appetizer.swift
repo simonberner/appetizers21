@@ -21,7 +21,7 @@ struct Appetizer: Decodable, Identifiable {
 }
 
 // Helper response object
-struct AppetizerResponse {
+struct AppetizerResponse: Decodable {
     let request: [Appetizer]
 }
 
