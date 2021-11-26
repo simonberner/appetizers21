@@ -7,13 +7,23 @@
 
 import SwiftUI
 
+// The view shall not contain any business logic and data.
+// It redraws upon changes of the viewModel
 struct AppetizerListView: View {
+
+    // Listening to the change of the viewModel
+    // (Redraws the view when it changes)
+    @StateObject var viewModel = AppetizerListViewModel()
+
     var body: some View {
         NavigationView {
-            List(MockData.appetizers) { appetizer in
+            List(viewModel.appetizers) { appetizer in
                AppetizerListCell(appetizer: appetizer)
             }
             .navigationTitle("🍟 Appetizers")
+        }
+        .onAppear {
+            viewModel.getAppetizers()
         }
     }
 }
