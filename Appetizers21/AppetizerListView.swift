@@ -11,8 +11,8 @@ import SwiftUI
 // It redraws upon changes of the viewModel
 struct AppetizerListView: View {
 
-    // Listening to the change of the viewModel
-    // (Redraws the view when it changes)
+    // Listening to changes in the viewModel
+    // (Redraws the view when something (appetizers, alertItem) changes)
     @StateObject var viewModel = AppetizerListViewModel()
 
     var body: some View {
@@ -24,6 +24,11 @@ struct AppetizerListView: View {
         }
         .onAppear {
             viewModel.getAppetizers()
+        }
+        .alert(item: $viewModel.alertItem) { alertItem in
+            Alert(title: alertItem.title,
+                  message: alertItem.message,
+                  dismissButton: alertItem.dismissButton)
         }
     }
 }
