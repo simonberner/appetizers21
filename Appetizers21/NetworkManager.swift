@@ -5,11 +5,13 @@
 //  Created by Simon Berner on 25.11.21.
 //
 
-import Foundation
+import UIKit
 
 // singelton
 final class NetworkManager {
+
     static let shared = NetworkManager()
+    private let cache = NSCache<NSString, UIImage>() // Key, Value
 
     static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
     // endpoint
@@ -54,5 +56,40 @@ final class NetworkManager {
         }
 
         task.resume()
+    }
+
+    // 1st: pass in an urlString to the image
+    // 2nd: the network call is going to return a closure which has an UIImage or nil
+    func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void) {
+
+        let cacheKey = NSString(string: urlString)
+
+        // check the cache before we download the image
+        if let image = cache.object(forKey: cacheKey) {
+            completed(image) // call completed return the image
+            return
+        }
+
+        // check the passed in url
+        guard let url = URL(string: urlString) else {
+            completed(nil) // call the completion hander
+            return
+        }
+
+        // create the network call (we don't care about an error)
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { [self] data, response, error in
+
+            // if we have data AND we can initialise an image from that data
+            guard let data = data, let image = UIImage(data: data) else {
+                completed(nil)
+                return
+            }
+
+            // if we then have the image, set it into the cache
+            cache.setObject(image, forKey: cacheKey)
+            completed(image) // call the completion hander
+        }
+
+        task.resume() // resolve the network call
     }
 }
