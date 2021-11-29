@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150A1E0F27556027004E5E76 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A1E0E27556027004E5E76 /* RemoteImage.swift */; };
 		155B382D2752E720009658E8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B382C2752E720009658E8 /* Alert.swift */; };
 		157131FA2750F0BF000F6A66 /* AppetizerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157131F92750F0BF000F6A66 /* AppetizerListViewModel.swift */; };
 		1574FBC027502806005DFAEF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1574FBBF27502806005DFAEF /* NetworkManager.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		150A1E0E27556027004E5E76 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		155B382C2752E720009658E8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		157131F92750F0BF000F6A66 /* AppetizerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewModel.swift; sourceTree = "<group>"; };
 		1574FBBF27502806005DFAEF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				155B382C2752E720009658E8 /* Alert.swift */,
 				15F9078927541DAE00D885E9 /* LoadingView.swift */,
 				15F9078B2754226A00D885E9 /* Color+Ext.swift */,
+				150A1E0E27556027004E5E76 /* RemoteImage.swift */,
 			);
 			path = Appetizers21;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				15F9078A27541DAE00D885E9 /* LoadingView.swift in Sources */,
 				1574FBC027502806005DFAEF /* NetworkManager.swift in Sources */,
 				15DE9EB2274EB29F009DC7B4 /* Appetizers21App.swift in Sources */,
+				150A1E0F27556027004E5E76 /* RemoteImage.swift in Sources */,
 				157131FA2750F0BF000F6A66 /* AppetizerListViewModel.swift in Sources */,
 				155B382D2752E720009658E8 /* Alert.swift in Sources */,
 				15DE9EDC274ED3CD009DC7B4 /* AppetizerListView.swift in Sources */,
