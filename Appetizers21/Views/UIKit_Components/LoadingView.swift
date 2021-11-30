@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// THIS IS NOT NEEDED ANYMORE WITH SwiftUI! ProgressView() IS THE NEW WAY TO GO!
 // UIKit view loading spinner wrapped into a SwiftUI view with UIViewRepresentable
 struct ActivityIndicator: UIViewRepresentable {
 

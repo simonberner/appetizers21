@@ -179,17 +179,17 @@
 			children = (
 				15C1522627562B4D00C67C11 /* Image */,
 				15C1522527562B4600C67C11 /* Cells */,
-				15C1522427562B3D00C67C11 /* UIKit Components */,
+				15C1522427562B3D00C67C11 /* UIKit_Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		15C1522427562B3D00C67C11 /* UIKit Components */ = {
+		15C1522427562B3D00C67C11 /* UIKit_Components */ = {
 			isa = PBXGroup;
 			children = (
 				15F9078927541DAE00D885E9 /* LoadingView.swift */,
 			);
-			path = "UIKit Components";
+			path = UIKit_Components;
 			sourceTree = "<group>";
 		};
 		15C1522527562B4600C67C11 /* Cells */ = {

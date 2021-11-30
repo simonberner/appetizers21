@@ -29,7 +29,7 @@ struct AppetizerListView: View {
 
             // the loading view is put on top
             if viewModel.isLoading {
-                LoadingView()
+                ProgressView("Loading...")
             }
         }
         .alert(item: $viewModel.alertItem) { alertItem in
