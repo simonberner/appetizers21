@@ -39,7 +39,7 @@ struct AppetizerDetailView: View {
                 Spacer()
 
                 // 3rd major element
-                OrderButton(price: appetizer.price)
+                OrderButton(title: "$\(appetizer.price, specifier: "%.2f") - Add to Order")
                     .padding()
             }
         }

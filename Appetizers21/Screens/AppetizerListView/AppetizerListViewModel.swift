@@ -16,6 +16,8 @@ final class AppetizerListViewModel: ObservableObject {
     @Published var alertItem: AlertItem?
     // Broadcast when retrieving the JSON data
     @Published var isLoading = false
+    @Published var isShowingDetailView = false
+    @Published var selectedAppetizer: Appetizer?
 
     // Setting the data is triggering the UI update (reactive)
     // That is why getting the data needs to happen on the main thread with SwiftUI

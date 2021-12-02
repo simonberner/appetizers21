@@ -9,13 +9,13 @@ import SwiftUI
 
 struct OrderButton: View {
 
-    let price: Double
+    let title: LocalizedStringKey
 
     var body: some View {
         Button {
 
         } label: {
-            Text("$\(price, specifier: "%.2f") - Add to Order")
+            Text(title)
                 .font(.title3)
                 .fontWeight(.semibold)
                 .frame(width: 220, height: 40)
@@ -28,6 +28,6 @@ struct OrderButton: View {
 
 struct OrderButton_Previews: PreviewProvider {
     static var previews: some View {
-        OrderButton(price: 9.99)
+        OrderButton(title: "Test Order")
     }
 }

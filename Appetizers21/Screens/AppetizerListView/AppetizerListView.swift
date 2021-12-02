@@ -14,9 +14,6 @@ struct AppetizerListView: View {
     // Listening to changes in the viewModel
     // (Redraws the view when something (appetizers, alertItem) changes)
     @StateObject var viewModel = AppetizerListViewModel()
-    // state property: https://developer.apple.com/documentation/swiftui/state
-    @State private var isShowingDetailView = false
-    @State private var selectedAppetizer: Appetizer?
 
     var body: some View {
         ZStack {
@@ -24,21 +21,22 @@ struct AppetizerListView: View {
                 List(viewModel.appetizers) { appetizer in
                    AppetizerListCell(appetizer: appetizer)
                         .onTapGesture {
-                            selectedAppetizer = appetizer
-                            isShowingDetailView = true
+                            viewModel.selectedAppetizer = appetizer
+                            viewModel.isShowingDetailView = true
                         }
                 }
                 .navigationTitle("🍟 Appetizers")
-                .disabled(isShowingDetailView)
+                .disabled(viewModel.isShowingDetailView)
             }
             .onAppear {
                 viewModel.getAppetizers()
             }
-            .blur(radius: isShowingDetailView ? 20 : 0)
+            .blur(radius: viewModel.isShowingDetailView ? 20 : 0)
 
             // redraws this view and puts the detail view of an appetizer on top
-            if isShowingDetailView {
-                AppetizerDetailView(appetizer: selectedAppetizer!, isShowingDetail: $isShowingDetailView)
+            if viewModel.isShowingDetailView {
+                AppetizerDetailView(appetizer: viewModel.selectedAppetizer!,
+                                    isShowingDetail: $viewModel.isShowingDetailView)
             }
 
             // the loading view is put on top
