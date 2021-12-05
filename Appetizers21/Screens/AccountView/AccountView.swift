@@ -9,42 +9,41 @@ import SwiftUI
 
 struct AccountView: View {
 
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    @State private var birthdate = Date()
-    @State private var extraNapkins = false
-    @State private var frequentRefills = false
-
-
+    // @StateObject property wrapper will persist the value during the rendering!
+    @StateObject var accountViewModel = AccountViewModel()
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Personal Info")) {
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $lastName)
-                    TextField("Email", text: $email)
+                    TextField("First Name", text: $accountViewModel.firstName)
+                    TextField("Last Name", text: $accountViewModel.lastName)
+                    TextField("Email", text: $accountViewModel.email)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
-                    DatePicker("Birthday", selection: $birthdate, displayedComponents: .date)
+                    DatePicker("Birthday", selection: $accountViewModel.birthdate, displayedComponents: .date)
 
                     Button {
-                        print("save")
+                        accountViewModel.saveChanges()
                     } label: {
                         Text("Save Changes")
                     }
                 }
-                
+
                 Section(header: Text("Requests")) {
-                    Toggle("Extra Napkins", isOn: $extraNapkins)
-                    Toggle("Frequent Refills", isOn: $frequentRefills)
+                    Toggle("Extra Napkins", isOn: $accountViewModel.extraNapkins)
+                    Toggle("Frequent Refills", isOn: $accountViewModel.frequentRefills)
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
                 
             }
-                .navigationTitle("🙂 Account")
+            .navigationTitle("🙂 Account")
+        }
+        .alert(isPresented: $accountViewModel.showingAlert) {
+            Alert(title: accountViewModel.alertItem!.title,
+                  message: accountViewModel.alertItem?.message,
+                  dismissButton: accountViewModel.alertItem?.dismissButton)
         }
     }
 }
