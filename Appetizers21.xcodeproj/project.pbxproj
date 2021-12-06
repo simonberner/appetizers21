@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		150A1E0F27556027004E5E76 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A1E0E27556027004E5E76 /* RemoteImage.swift */; };
+		1521BEA7275EACAF0029EC83 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1521BEA6275EACAF0029EC83 /* EmptyState.swift */; };
 		1551333B275A70F700D2B879 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551333A275A70F700D2B879 /* AccountViewModel.swift */; };
 		1551333D275A8FC300D2B879 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1551333C275A8FC300D2B879 /* String+Ext.swift */; };
 		155B382D2752E720009658E8 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B382C2752E720009658E8 /* Alert.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		150A1E0E27556027004E5E76 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		1521BEA6275EACAF0029EC83 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		1551333A275A70F700D2B879 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		1551333C275A8FC300D2B879 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		155B382C2752E720009658E8 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 				15C1522927568AB900C67C11 /* OrderButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		1521BEA5275EAC870029EC83 /* EmptyStates */ = {
+			isa = PBXGroup;
+			children = (
+				1521BEA6275EACAF0029EC83 /* EmptyState.swift */,
+			);
+			path = EmptyStates;
 			sourceTree = "<group>";
 		};
 		15C1521A27562A5600C67C11 /* Screens */ = {
@@ -202,6 +212,7 @@
 		15C1522327562B3700C67C11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1521BEA5275EAC870029EC83 /* EmptyStates */,
 				1501FB2B2757EADB00580A29 /* Buttons */,
 				15C1522627562B4D00C67C11 /* Image */,
 				15C1522527562B4600C67C11 /* Cells */,
@@ -438,6 +449,7 @@
 				15DE9EB2274EB29F009DC7B4 /* Appetizers21App.swift in Sources */,
 				150A1E0F27556027004E5E76 /* RemoteImage.swift in Sources */,
 				1551333D275A8FC300D2B879 /* String+Ext.swift in Sources */,
+				1521BEA7275EACAF0029EC83 /* EmptyState.swift in Sources */,
 				15C152282756718500C67C11 /* AppetizerDetailView.swift in Sources */,
 				157131FA2750F0BF000F6A66 /* AppetizerListViewModel.swift in Sources */,
 				155B382D2752E720009658E8 /* Alert.swift in Sources */,

@@ -13,22 +13,29 @@ struct OrderView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                // swipe to delete is only possible on ForEach
-                List {
-                    ForEach(orderItems) { appetizer in
-                        AppetizerListCell(appetizer: appetizer)
+            ZStack {
+                VStack {
+                    // swipe to delete is only possible on ForEach
+                    List {
+                        ForEach(orderItems) { appetizer in
+                            AppetizerListCell(appetizer: appetizer)
+                        }
+                        // SwiftUI passes the indexSet in based on the ForEach
+                        .onDelete(perform: { indexSet in
+                            orderItems.remove(atOffsets: indexSet)
+                        })
                     }
-                    // SwiftUI passes the indexSet in based on the ForEach
-                    .onDelete(perform: { indexSet in
-                        orderItems.remove(atOffsets: indexSet)
+                    .listStyle(PlainListStyle())
+                    OrderButton(title: "Place Order", action: {
+                        print("TODO")
                     })
+                        .padding(.bottom, 25)
                 }
-                .listStyle(PlainListStyle())
-                OrderButton(title: "Place Order", action: {
-                    print("TODO")
-                })
-                    .padding(.bottom, 25)
+
+                if orderItems.isEmpty {
+                    EmptyState(imageName: "empty-order",
+                               message: "You have no items in your oder.\nPlease add an appetizer!")
+                }
             }
             .navigationTitle("🧾 Orders")
         }
