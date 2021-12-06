@@ -10,10 +10,12 @@ import SwiftUI
 struct OrderButton: View {
 
     let title: LocalizedStringKey
+    // closure property (closure which initialises the property)
+    var action = { }
 
     var body: some View {
         Button {
-
+            action()
         } label: {
             Text(title)
                 .font(.title3)
