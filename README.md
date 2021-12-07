@@ -2,6 +2,11 @@
 Appetizers21 is a take-home project to practice and learn iOS development. Learning how to fetch JSON data, caching, showing alerts
 is the main goal of this App.
 
+## Screens
+![Home](appetizers21-home.png)
+![Home](appetizers21-account.png)
+![Home](appetizers21-order.png)
+
 ## App Store
 This App is not available on the App Store.
 
