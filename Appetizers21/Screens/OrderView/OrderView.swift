@@ -9,7 +9,8 @@ import SwiftUI
 
 struct OrderView: View {
 
-    @State private var orderItems = MockData.orderItems
+    // access the injected environment var
+    @EnvironmentObject var order: Order
 
     var body: some View {
         NavigationView {
@@ -17,22 +18,23 @@ struct OrderView: View {
                 VStack {
                     // swipe to delete is only possible on ForEach
                     List {
-                        ForEach(orderItems) { appetizer in
+                        ForEach(order.items) { appetizer in
                             AppetizerListCell(appetizer: appetizer)
                         }
                         // SwiftUI passes the indexSet in based on the ForEach
                         .onDelete(perform: { indexSet in
-                            orderItems.remove(atOffsets: indexSet)
+                            order.remove(indexSet)
                         })
                     }
                     .listStyle(PlainListStyle())
-                    OrderButton(title: "Place Order", action: {
-                        print("TODO")
+                    OrderButton(title: " $\(order.totalPrice, specifier: "%.2f") - Place Order",
+                                action: {
+                        print("Order placed!")
                     })
                         .padding(.bottom, 25)
                 }
 
-                if orderItems.isEmpty {
+                if order.items.isEmpty {
                     EmptyState(imageName: "empty-order",
                                message: "You have no items in your oder.\nPlease add an appetizer!")
                 }

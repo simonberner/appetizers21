@@ -9,6 +9,9 @@ import SwiftUI
 
 struct AppetizerDetailView: View {
 
+    // access the injected environment var
+    @EnvironmentObject var order: Order
+
     let appetizer: Appetizer
     @Binding var isShowingDetail: Bool
 
@@ -39,7 +42,10 @@ struct AppetizerDetailView: View {
                 Spacer()
 
                 // 3rd major element
-                OrderButton(title: "$\(appetizer.price, specifier: "%.2f") - Add to Order")
+                OrderButton(title: "$\(appetizer.price, specifier: "%.2f") - Add to Order", action: {
+                    order.add(appetizer)
+                    isShowingDetail = false
+                })
                     .padding()
             }
         }
