@@ -26,7 +26,7 @@
 		15DE9EB4274EB29F009DC7B4 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DE9EB3274EB29F009DC7B4 /* AppetizerTabView.swift */; };
 		15DE9EB6274EB2A1009DC7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15DE9EB5274EB2A1009DC7B4 /* Assets.xcassets */; };
 		15DE9EB9274EB2A1009DC7B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15DE9EB8274EB2A1009DC7B4 /* Preview Assets.xcassets */; };
-		15DE9EC3274EB2A1009DC7B4 /* Appetizers21Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DE9EC2274EB2A1009DC7B4 /* Appetizers21Tests.swift */; };
+		15DE9EC3274EB2A1009DC7B4 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DE9EC2274EB2A1009DC7B4 /* NetworkManagerTests.swift */; };
 		15DE9ECD274EB2A1009DC7B4 /* Appetizers21UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DE9ECC274EB2A1009DC7B4 /* Appetizers21UITests.swift */; };
 		15DE9ECF274EB2A1009DC7B4 /* Appetizers21UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DE9ECE274EB2A1009DC7B4 /* Appetizers21UITestsLaunchTests.swift */; };
 		15DE9EDC274ED3CD009DC7B4 /* AppetizerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DE9EDB274ED3CD009DC7B4 /* AppetizerListView.swift */; };
@@ -75,7 +75,7 @@
 		15DE9EB5274EB2A1009DC7B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15DE9EB8274EB2A1009DC7B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		15DE9EBE274EB2A1009DC7B4 /* Appetizers21Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Appetizers21Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		15DE9EC2274EB2A1009DC7B4 /* Appetizers21Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizers21Tests.swift; sourceTree = "<group>"; };
+		15DE9EC2274EB2A1009DC7B4 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		15DE9EC8274EB2A1009DC7B4 /* Appetizers21UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Appetizers21UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DE9ECC274EB2A1009DC7B4 /* Appetizers21UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizers21UITests.swift; sourceTree = "<group>"; };
 		15DE9ECE274EB2A1009DC7B4 /* Appetizers21UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizers21UITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -248,6 +248,14 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		15C6977D2760E6F1000D2517 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				15DE9EC2274EB2A1009DC7B4 /* NetworkManagerTests.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		15DE9EA5274EB29F009DC7B4 = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +301,7 @@
 		15DE9EC1274EB2A1009DC7B4 /* Appetizers21Tests */ = {
 			isa = PBXGroup;
 			children = (
-				15DE9EC2274EB2A1009DC7B4 /* Appetizers21Tests.swift */,
+				15C6977D2760E6F1000D2517 /* NetworkManager */,
 			);
 			path = Appetizers21Tests;
 			sourceTree = "<group>";
@@ -466,7 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15DE9EC3274EB2A1009DC7B4 /* Appetizers21Tests.swift in Sources */,
+				15DE9EC3274EB2A1009DC7B4 /* NetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@ final class NetworkManager {
 
     static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
     // endpoint
-    private let appetizerURL = baseURL + "appetizers"
+    let appetizerURL = baseURL + "appetizers"
 
     private init () {}
 
