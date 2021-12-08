@@ -2,41 +2,55 @@
 //  Appetizers21UITests.swift
 //  Appetizers21UITests
 //
-//  Created by Simon Berner on 24.11.21.
+//  Created by Simon Berner on 08.12.21.
 //
 
 import XCTest
 
 class Appetizers21UITests: XCTestCase {
 
+    let app = XCUIApplication()
+
+    // In UI tests it’s important to set the initial state (such as interface orientation)
+    // required for your tests before they run. The setUp method is a good place to do this.
+    // Put setup code here. This method is called before the invocation of each test method in the class.
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Launching the app
+        app.launch()
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // Closing the app
+        app.terminate()
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
+    func testOrderFlowWithOneAppetizer() throws {
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Given
+        let asianFlankSteak899Cell = app.tables.cells["Asian Flank Steak, $8.99"]
+        let addButton = app.buttons["$8.99 - Add to Order"]
+        let tabBarOrder = app.tabBars["Tab Bar"].buttons["Order"]
+        let orderPlaced2  = asianFlankSteak899Cell.children(matching: .other).element(boundBy: 2).children(matching: .other).element
+
+        // When
+        asianFlankSteak899Cell.tap()
+        addButton.tap()
+        tabBarOrder.tap()
+
+        // Then
+        XCTAssertTrue(orderPlaced2.exists)
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+//    func testLaunchPerformance() throws {
+//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+//            // This measures how long it takes to launch your application.
+//            measure(metrics: [XCTApplicationLaunchMetric()]) {
+//                XCUIApplication().launch()
+//            }
+//        }
+//    }
 }
