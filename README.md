@@ -16,6 +16,7 @@ This App is not available on the App Store.
 - Codable
 - JSON
 - Combine (for getting JSON data)
+- XCTest
 ### SwiftUI
 - Form, Section
 - ProgressView
@@ -45,9 +46,17 @@ it behaves like a state variable and triggers an UI update.
 - [A Predicate is a filter](https://www.hackingwithswift.com/read/38/7/examples-of-using-nspredicate-to-filter-nsfetchrequest)
 - [Core Data String Queries using NSPredicate](https://www.advancedswift.com/core-data-string-query-examples-in-swift/)
 - [PredicateKit](https://github.com/ftchirou/PredicateKit)
-
+### Writing Unit-Tests
+- [Unit tests best practices in Xcode and Swift](https://www.avanderlee.com/swift/unit-tests-best-practices/)
+- [Getting started with Unit-Testing](https://www.youtube.com/watch?v=F5aDfGNdsac)
 ## Code comments
 For learning purposes, I have added lots of comments alongside the code. I know that this would propably be ommitted in 'production' code ;)
+
+## Testing with XCTest/XCUITest
+As a Tester I have the natural intrinsic  behavior of adding some Tests to my own written code. From my point of view it does not matter wether one does that
+in a TDD or 'after the code is written' fashion. As an automation engineer coming from the Selenium/Appium automation world, I am impressed how
+fast the UI Test run on a Simulator with XCTest.
+So in this project I have for the very first time in my life ever, written some Unit- and UI-Tests with pure XCTest. Have a look and enjoy! (More to come)
 
 ## Credits
 Thanks to Sean Allen for an amazingly well structured and tought SwiftUI Fundamentals course!
