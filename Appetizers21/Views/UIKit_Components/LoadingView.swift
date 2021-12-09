@@ -30,7 +30,7 @@ struct LoadingView: View {
     var body: some View {
         ZStack {
             Color(.systemBackground) // white primary background (from UIKit)
-                .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea()
 
             ActivityIndicator()
         }
