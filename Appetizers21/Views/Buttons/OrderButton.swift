@@ -18,13 +18,9 @@ struct OrderButton: View {
             action()
         } label: {
             Text(title)
-                .font(.title3)
-                .fontWeight(.semibold)
-                .frame(width: 220, height: 40)
-                .background(Color.brandPrimary)
-                .foregroundColor(.white)
-                .cornerRadius(10)
         }
+        .modifier(StandardButtonStyle())
+//        .standardButtonStyle()
     }
 }
 

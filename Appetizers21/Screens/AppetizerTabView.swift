@@ -8,24 +8,20 @@
 import SwiftUI
 
 struct AppetizerTabView: View {
+
+    // access the injected environment var
+    @EnvironmentObject var order: Order
+
     var body: some View {
         TabView {
             // ViewBuilder of this TabView
             AppetizerListView()
-                .tabItem { // tabItem ViewModifier
-                    Image(systemName: "house")
-                    Text("Home")
-                }
+                .tabItem { Label("Home", systemImage: "house") }
             AccountView()
-                .tabItem {
-                    Image(systemName: "person")
-                    Text("Account")
-                }
+                .tabItem { Label("Account", systemImage: "person") }
             OrderView()
-                .tabItem {
-                    Image(systemName: "bag")
-                    Text("Order")
-                }
+                .tabItem { Label("Order", systemImage: "bag") }
+                .badge(order.items.count)
         }
     }
 }

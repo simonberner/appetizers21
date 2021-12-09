@@ -40,7 +40,7 @@ struct AppetizerDetailView: View {
                 }
 
                 Spacer()
-
+                
                 // 3rd major element
                 OrderButton(title: "$\(appetizer.price, specifier: "%.2f") - Add to Order", action: {
                     order.add(appetizer)
