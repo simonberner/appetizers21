@@ -28,21 +28,35 @@ class NetworkManagerTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    func test_successfull_appetizers_fetching() throws {
-        // Arrange & Act
-        networkManager.getAppetizers { [self] result in
-            switch result {
-            case .success(let appetizers):
+    // Unit-Test async/await code
+    func test_successfull_async_appetizers_fetching() throws {
+        Task {
+            do {
+                // Arrange & Act
+               let appetizers = try await networkManager.getAppetizers()
                 // Assert
                 XCTAssertNotNil(appetizers)
-            default:
+            } catch {
                 XCTFail("Fetching of Appetizers from \(networkManager.appetizerURL) failed!")
             }
-
         }
-
     }
+
+    // Unit-Test before async/await using callbacks and 'Result'
+//    func test_successfull_appetizers_fetching() throws {
+//        // Arrange & Act
+//        networkManager.getAppetizers { [self] result in
+//            switch result {
+//            case .success(let appetizers):
+//                // Assert
+//                XCTAssertNotNil(appetizers)
+//            default:
+//                XCTFail("Fetching of Appetizers from \(networkManager.appetizerURL) failed!")
+//            }
+//
+//        }
+//
+//    }
 
     func test_successfull_image_fetching() throws {
         // Arrange
