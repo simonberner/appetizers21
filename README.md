@@ -33,6 +33,7 @@ This App is not available on the App Store.
 - [@ObservedObject vs @StateObject](https://medium.com/swlh/understanding-stateobject-in-swiftui-for-ios-14-98c68310154a)
 - @StateObject property wrapper persists the value during the rendering of the view
 - [Reducers](https://www.hackingwithswift.com/example-code/language/how-to-use-reduce-to-condense-an-array-into-a-single-value) let us reduce values into a single one
+- [Trainling clousure syntax can be used, when a closure is the last parameter in a function](https://www.hackingwithswift.com/example-code/language/what-is-trailing-closure-syntax)
 ### SwiftUI
 - Whenever we want to update a view, we need some @State
 - [Alerts in iOS15](https://www.hackingwithswift.com/quick-start/swiftui/how-to-show-an-alert)
@@ -46,6 +47,16 @@ it behaves like a state variable and triggers an UI update.
 - [A Predicate is a filter](https://www.hackingwithswift.com/read/38/7/examples-of-using-nspredicate-to-filter-nsfetchrequest)
 - [Core Data String Queries using NSPredicate](https://www.advancedswift.com/core-data-string-query-examples-in-swift/)
 - [PredicateKit](https://github.com/ftchirou/PredicateKit)
+### NEW async/await (introduced at WWDC21)
+- A lot of stuff gets abstracted away with async/await (not necessarly having less lines of code):
+	- putting manually things onto the main queue/thread explicitly
+	- completion handler handeling all the exists
+	- doing the weak self dance
+- [Is a welcome change on the testing side of the codebase!](https://mokacoding.com/blog/how-to-test-async-await-code-in-swift/)
+### AsyncImage
+- [A simple way to download and render a remote image from a URL](https://wwdcbysundell.com/2021/using-swiftui-async-image/)
+- Pros: easy way to asynchronously load and display an Image
+- Cons: offers no cachihg of already loaded Images!
 ### Writing Unit-Tests
 - [Unit tests best practices in Xcode and Swift](https://www.avanderlee.com/swift/unit-tests-best-practices/)
 - [Getting started with Unit-Testing](https://www.youtube.com/watch?v=F5aDfGNdsac)
