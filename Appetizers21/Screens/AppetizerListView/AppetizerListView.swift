@@ -44,10 +44,10 @@ struct AppetizerListView: View {
 
             // the loading view is put on top
             if viewModel.isLoading {
-                ProgressView("Loading...")
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .brandPrimary))
+                    .scaleEffect(2)
             }
-
-
         }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: alertItem.title,
