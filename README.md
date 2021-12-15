@@ -57,9 +57,17 @@ it behaves like a state variable and triggers an UI update.
 - [A simple way to download and render a remote image from a URL](https://wwdcbysundell.com/2021/using-swiftui-async-image/)
 - Pros: easy way to asynchronously load and display an Image
 - Cons: offers no cachihg of already loaded Images!
-### Writing Unit-Tests
-- [Unit tests best practices in Xcode and Swift](https://www.avanderlee.com/swift/unit-tests-best-practices/)
-- [Getting started with Unit-Testing](https://www.youtube.com/watch?v=F5aDfGNdsac)
+### Property Wrappers for handling and passing data
+- @State: SwiftUI will manage the state of a struct property separately for us so that it doesn't get destroyed when a struct view gets recreated.
+When a @State value changes, the view invalidates is appearance and recomputes the views body. @State is used for private properties that belong
+to a specific view and never get used outside of its local scope.
+- @StateObject: used to observe an object which conforms to the ObservableObject protocol (eg. viewModel). The body of a view will be recreated
+when this object changes.
+- @Binding: It connects a property to a source of truth stored elsewhere and can r&w its value.
+- @ObservableObject: used when passing in a value (e.g. viewModel class) from outside (reference) that shall be observed. Get's destroyed when a view gets recreated!
+- @EnvironmentObject: used to observe an object which is supplied by a parent view to its ancestor views.
+- [Some differences](https://www.hackingwithswift.com/quick-start/swiftui/whats-the-difference-between-observedobject-state-and-environmentobject)
+
 ## Code comments
 For learning purposes, I have added lots of comments alongside the code. I know that this would propably be ommitted in 'production' code ;)
 
@@ -68,6 +76,14 @@ As a Tester I have the natural intrinsic  behavior of adding some Tests to my ow
 in a TDD or 'after the code is written' fashion. As an automation engineer coming from the Selenium/Appium automation world, I am impressed how
 fast the UI Test run on a Simulator with XCTest.
 So in this project I have for the very first time in my life ever, written some Unit- and UI-Tests with pure XCTest. Have a look and enjoy! (More to come)
+### Unit-Tests
+- [Unit tests best practices in Xcode and Swift](https://www.avanderlee.com/swift/unit-tests-best-practices/)
+- [Getting started with Unit-Testing](https://www.youtube.com/watch?v=F5aDfGNdsac)
+### UI-Tests
+- [Xcode UI Testing Cheat Sheet](https://www.hackingwithswift.com/articles/148/xcode-ui-testing-cheat-sheet)
+    - use .accessiblityIdentifier() to specify the identity of a view. It is used for testing purposes only and not for user accessibility.
+    - prefer waitForExistence(timeout:) over a regular exists check
+    - prefer using 'firstMatch' over 'element'
 
 ## Credits
 Thanks to Sean Allen for an amazingly well structured and tought SwiftUI Fundamentals course!
