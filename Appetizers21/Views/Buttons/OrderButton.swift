@@ -20,6 +20,7 @@ struct OrderButton: View {
             Text(title)
         }
         .modifier(StandardButtonStyle())
+        .accessibilityIdentifier("AddToOrder") // only for internal (testing) usage
 //        .standardButtonStyle()
     }
 }

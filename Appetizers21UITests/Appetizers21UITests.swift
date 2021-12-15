@@ -32,9 +32,9 @@ class Appetizers21UITests: XCTestCase {
 
         // Given
         let asianFlankSteak899Cell = app.tables.cells["Asian Flank Steak, $8.99"]
-        let addButton = app.buttons["$8.99 - Add to Order"]
+        let addButton = app.buttons["AddToOrder"]
         let tabBarOrder = app.tabBars["Tab Bar"].buttons["Order"]
-        let orderPlaced2  = asianFlankSteak899Cell.children(matching: .other).element(boundBy: 2).children(matching: .other).element
+        let orderPlaced  = asianFlankSteak899Cell.children(matching: .other).element(boundBy: 2).children(matching: .other).firstMatch
 
         // When
         asianFlankSteak899Cell.tap()
@@ -42,7 +42,7 @@ class Appetizers21UITests: XCTestCase {
         tabBarOrder.tap()
 
         // Then
-        XCTAssertTrue(orderPlaced2.exists)
+        XCTAssertTrue(orderPlaced.waitForExistence(timeout: 2))
     }
 
 //    func testLaunchPerformance() throws {
