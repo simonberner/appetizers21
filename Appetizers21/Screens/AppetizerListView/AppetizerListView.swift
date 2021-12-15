@@ -11,8 +11,12 @@ import SwiftUI
 // It redraws upon changes of the viewModel
 struct AppetizerListView: View {
 
-    // Listening to changes in the viewModel
-    // (Redraws the view when something (appetizers, alertItem) changes)
+    // A property wrapper type that instantiates an ObservableObject
+    // and then listens to its changes.
+    // (Redraws/Recreates the view when something (appetizers, alertItem) changes)
+    // This view owns/creates the viewModel so we have to use @StateObject
+    // If we would pass in the viewModel to this view, we would need to use @ObservedObject
+    // (and with this the viewModel would be destroyed every time the view redraws!)
     @StateObject var viewModel = AppetizerListViewModel()
 
     var body: some View {
@@ -39,7 +43,7 @@ struct AppetizerListView: View {
             // redraws this view and puts the detail view of an appetizer on top
             if viewModel.isShowingDetailView {
                 AppetizerDetailView(appetizer: viewModel.selectedAppetizer!,
-                                    isShowingDetail: $viewModel.isShowingDetailView)
+                                    isShowingDetail: $viewModel.isShowingDetailView.animation())
             }
 
             // the loading view is put on top

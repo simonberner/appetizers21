@@ -13,23 +13,24 @@ struct AppetizerListCell: View {
 
     var body: some View {
         HStack {
-//            AppetizerRemoteImage(urlString: appetizer.imageURL)
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 120, height: 90)
-//                .cornerRadius(8)
+            // With caching of the images
+            AppetizerRemoteImage(urlString: appetizer.imageURL)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 120, height: 90)
+                .cornerRadius(8)
 
-            // Cons: AsyncImage does not offer any caching for already downloaded images!
+            // AsyncImage does not offer any caching for already downloaded images!
             // (for loading a list of hundreds/thousands of Images, this might be not
             // the way to go)
-            AsyncImage(url: URL(string: appetizer.imageURL)) { image in
-                image
-                    .resizable()
-                    .modifier(ListCellImageStyle())
-            } placeholder: {
-                Image("food-placeholder")
-                    .resizable()
-                    .modifier(ListCellImageStyle())
-            }
+//            AsyncImage(url: URL(string: appetizer.imageURL)) { image in
+//                image
+//                    .resizable()
+//                    .modifier(ListCellImageStyle())
+//            } placeholder: {
+//                Image("food-placeholder")
+//                    .resizable()
+//                    .modifier(ListCellImageStyle())
+//            }
 
 
             VStack(alignment: .leading, spacing: 5) {
