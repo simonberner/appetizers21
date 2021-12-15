@@ -10,6 +10,7 @@ import XCTest
 class Appetizers21UITests: XCTestCase {
 
     let app = XCUIApplication()
+    let explicitWait: TimeInterval = 2
 
     // In UI tests it’s important to set the initial state (such as interface orientation)
     // required for your tests before they run. The setUp method is a good place to do this.
@@ -28,7 +29,8 @@ class Appetizers21UITests: XCTestCase {
         app.terminate()
     }
 
-    func testOrderFlowWithOneAppetizer() throws {
+    // Check that an appetizer can be selected and added to 'Orders'
+    func testAppetizerCanBeAddedToOrders() throws {
 
         // Given
         let asianFlankSteak899Cell = app.tables.cells["Asian Flank Steak, $8.99"]
@@ -42,7 +44,24 @@ class Appetizers21UITests: XCTestCase {
         tabBarOrder.tap()
 
         // Then
-        XCTAssertTrue(orderPlaced.waitForExistence(timeout: 2))
+        XCTAssertTrue(orderPlaced.waitForExistence(timeout: explicitWait))
+    }
+
+    // Check that the 'Invalid Form' Alert is shown when the account form is invalid and the user clicks 'Save Changes'
+    func testInvalidAccountFormAlertIsShown() throws {
+
+        // Given
+        let tabBarAccount = app.tabBars["Tab Bar"].buttons["Account"]
+        let saveChangesButton = app.buttons["SaveChanges"]
+        let invalidFormAlert = app.alerts["Invalid Form"]
+//        let okButton = app.buttons["OK"]
+
+        // When
+        tabBarAccount.tap()
+        saveChangesButton.tap()
+
+        // Then
+        XCTAssertTrue(invalidFormAlert.waitForExistence(timeout: explicitWait))
     }
 
 //    func testLaunchPerformance() throws {

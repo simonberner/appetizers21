@@ -50,6 +50,7 @@ struct AccountView: View {
                     } label: {
                         Text("Save Changes")
                     }
+                    .accessibilityIdentifier("SaveChanges")
                 }
 
                 Section(header: Text("Requests")) {
