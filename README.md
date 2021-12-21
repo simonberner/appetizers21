@@ -1,5 +1,5 @@
 # Appetizers21
-Appetizers21 is a take-home project to practice and learn iOS development. Learning how to fetch JSON data, caching, showing alerts
+Appetizers21 is a take-home project to practice and learn iOS development. Learning how to fetch JSON data, caching and showing alerts,
 is the main goal of this App.
 
 ## Screens
@@ -40,6 +40,7 @@ This App is not available on the App Store.
 - @AppStorage is SwiftUI's way of interacting with UserDefaults. It will watch an item in UserDefaults and when that changes
 it behaves like a state variable and triggers an UI update.
 - [@AppStorage has also its downsides](https://www.avanderlee.com/swift/appstorage-explained/)
+- [SwiftUI tips and tricks](https://www.hackingwithswift.com/quick-start/swiftui/swiftui-tips-and-tricks)
 ### UserDefaults
 - Shall ONLY be used for storing some lightweight user preferences! 
 - Gets deleted when the App is deleted! So don't save any user critical data in there!
@@ -64,10 +65,19 @@ to a specific view and never get used outside of its local scope.
 - @StateObject: used to observe an object which conforms to the ObservableObject protocol (eg. viewModel). The body of a view will be recreated
 when this object changes.
 - @Binding: It connects a property to a source of truth stored elsewhere and can r&w its value.
+    - For prototyping, we can use a constant binding: .constant()
 - @ObservableObject: used when passing in a value (e.g. viewModel class) from outside (reference) that shall be observed. Get's destroyed when a view gets recreated!
 - @EnvironmentObject: used to observe an object which is supplied by a parent view to its ancestor views.
 - [Some differences](https://www.hackingwithswift.com/quick-start/swiftui/whats-the-difference-between-observedobject-state-and-environmentobject)
-
+### Optionals
+#### unwrapping
+- if let...
+- [guard let...](https://www.hackingwithswift.com/quick-start/beginners/how-to-unwrap-optionals-with-guard) is an early return to check wether something
+is valid right at the start or if we have to exit (with return) straight away.
+- [nil coalescing](https://www.hackingwithswift.com/quick-start/beginners/how-to-unwrap-optionals-with-nil-coalescing) : ```<optional> ?? <defaultValue>```
+#### 
+- [optional 'try?'](https://www.hackingwithswift.com/quick-start/beginners/how-to-handle-function-failure-with-optionals) to have a function returning
+an optional value. (The function will return nil if an error is thrown.)
 ## Code comments
 For learning purposes, I have added lots of comments alongside the code. I know that this would propably be ommitted in 'production' code ;)
 
